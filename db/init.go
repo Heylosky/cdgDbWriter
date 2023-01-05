@@ -13,7 +13,7 @@ func Writer(ch <-chan []byte) {
 	dsn := "root:Welcome@1@tcp(172.25.240.10:30306)/mvp?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
-		zap.L().Error("open mysql failed, err: " + err.Error())
+		zap.L().Panic("open mysql failed, err: ", zap.Error(err))
 	}
 
 	// 初始化数据库
