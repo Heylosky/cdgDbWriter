@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	logger.InitLogger("./dbWriter.log")
+	logger.InitLogger("./logs/dbWriter.log")
 	zap.L().Info("Processor sms to DB starting...")
 
 	in2dbChan := make(chan []byte)

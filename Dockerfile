@@ -11,6 +11,6 @@ RUN go build -o dbWriter .
 
 FROM scratch
 COPY --from=builder /build/dbWriter /
-COPY --from=builder /build/dbWriter.log /
+COPY --from=builder /build/logs /
 
 ENTRYPOINT ["/dbWriter"]
